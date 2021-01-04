@@ -13,7 +13,7 @@ def with_commit(func):
         func(*args, **kwargs)
         commit()
 
-        return inner
+    return inner
 
 @with_commit
 def build():
