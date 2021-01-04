@@ -1,0 +1,4 @@
+*.db
+*.db-journal
+__pycahce__
+"lib/bot/token.0"
