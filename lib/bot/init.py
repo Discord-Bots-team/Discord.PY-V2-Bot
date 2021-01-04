@@ -36,7 +36,6 @@ class Bot(BotBase):
 				self.guild = self.get_guild(778645541671403551)
 				print("Bot Ready!")
 
-
 			else:
 				print("Bot Reconnected!")
 
