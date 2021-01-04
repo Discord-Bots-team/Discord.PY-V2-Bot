@@ -21,6 +21,7 @@ def build():
         scriptexec(BUILD_PATH)
 
 def commit():
+    print('Committing...')
     cxn.commit()
 
 def autosave(sched):
@@ -57,8 +58,8 @@ def execute(command, *values):
     cur.execute(command, tuple(values))
 
 
-def multiexec(commands, *values):
-    cur.executemany(command, tuple(values))
+def multiexec(command, valueset):
+    cur.executemany(command, tuple(valueset))
 
 def scriptexec(path):
     with open(path, "r", encoding="UTF-8") as script:
