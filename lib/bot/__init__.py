@@ -16,9 +16,9 @@ class Bot(BotBase):
 
 		def run(self, version):
 			self.VERSION = version
-
-			with open("./lib/bot/token", "r", encoding="UTF-8") as tf:
-				self.TOKEN = tf.read()
+			self.TOKEN = "Nzk1NDQzODU1MTQ3MTM5MTEz.X_Jc0Q.szTUo6gPDB2El-7hn4zGwib1Bv8"
+			# with open("./lib/bot/token", "r", encoding="UTF-8") as tf:
+			# 	self.TOKEN = tf.read()
 
 			print("Running Bot...")
 			super().run(self.TOKEN, reconnect=True)
