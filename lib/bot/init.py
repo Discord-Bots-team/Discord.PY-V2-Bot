@@ -7,10 +7,10 @@ OWNER_IDS = [197748134485426177]
 
 class Bot(BotBase):
 	def __init__(self):
-		self.PREFIX=PREFIX
+		self.PREFIX = PREFIX
 		self.ready = False
-		self.guild=None
-		self.scheduler=AsyncIOScheduler()
+		self.guild = None
+		self.scheduler = AsyncIOScheduler()
 
 		super().__init__(command_prefix=PREFIX, owner_ids=OWNER_IDS)
 
@@ -20,8 +20,7 @@ class Bot(BotBase):
 			with open("./lib/bot/token", "r", encoding="UTF-8") as tf:
 				self.TOKEN = tf.read()
 
-
-			print("Running Bot")
+			print("Running Bot...")
 			super().run(self.TOKEN, reconnect=True)
 
 		async def connect(self):
