@@ -10,6 +10,7 @@ from discord.ext.commands import (CommandNotFound, BadArgument, MissingRequiredA
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
+from discord.ext.commands.errors import CommandOnCooldown
 
 from ..db import db
 
@@ -101,6 +102,8 @@ class Bot(BotBase):
 		elif isinstance(exc, MissingRequiredArgument):
 			await ctx.send("One or more arguments are missing.") 
 
+		elif isinstance(exc, CommandOnCooldown):
+    			await ctx.send(f'That command is on {str(exc.cooldown.type).split(".")[-1]} cooldown. Please try again in {exc.retry_after:,.2f} secs.')
 		
 		elif isinstance(exc.original, HTTPException):
 			await ctx.send("Unable to send message")
