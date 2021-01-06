@@ -1,4 +1,4 @@
 *.db
 *.db-journal
-__pycahce__
+__pycache__
 "lib/bot/token.0"
