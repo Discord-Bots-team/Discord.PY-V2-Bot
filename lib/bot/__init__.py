@@ -31,10 +31,6 @@ class ready(object):
 
 	def all_ready(self):
 		return all([getattr(self, cog) for cog in COGS])
-		
-
-
-
 
 class Bot(BotBase):
 	def __init__(self):

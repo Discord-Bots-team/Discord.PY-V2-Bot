@@ -29,11 +29,11 @@ class Fun(Cog):
 		else:
 			await ctx.send("I can't roll that many dice. Please try a lower number.")
 
-	@command(name="slap", aliases=["hit"])
-	async def slap_member(self, ctx, member: Member, *, reason: Optional[str] = "for no reason"):
-		await ctx.send(f"{ctx.author.display_name} slapped {member.mention} {reason}!")
+	@command(name="hug", aliases=["cuddle"])
+	async def cuddle_member(self, ctx, member: Member, *, reason: Optional[str] = "for no reason"):
+		await ctx.send(f"{ctx.author.display_name} hugged {member.mention} {reason}!")
 
-	@slap_member.error
+	@cuddle_member.error
 	async def slap_member_error(self, ctx, exc):
 		if isinstance(exc, BadArgument):
 			await ctx.send("I can't find that member.")
